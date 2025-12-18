@@ -1,0 +1,167 @@
+/* =========================
+   RESET & GLOBAL
+========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding-top: 120px;
+  font-family: "Segoe UI", Roboto, sans-serif;
+  background-color: #ffffff;
+  color: #212529;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+  background-color: #ffffff;
+  padding: 10px 0;
+}
+
+.navbar-brand {
+  padding: 0;
+}
+
+.navbar-logo {
+  height: 70px;
+  width: auto;
+  max-width: 320px;
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+/* =========================
+   HERO
+========================= */
+
+#home.hero-signature {
+  width: 100%;
+  min-height: calc(100vh - 120px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8f9fa;
+}
+
+.signature-img {
+  width: 100%;
+  max-width: 1400px;
+  max-height: 70vh;
+  object-fit: contain;
+  margin-bottom: 30px;
+}
+
+/* =========================
+   BOUTON CV
+========================= */
+
+.cv-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.cv-btn {
+  padding: 18px 60px;
+  font-size: 20px;
+  font-weight: 600;
+  border-radius: 16px;
+  background-color: #212529;
+  color: #ffffff;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.cv-btn:hover {
+  background-color: #000;
+  color: #ded4c7;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+/* =========================
+   SKILLS
+========================= */
+
+.skill-card {
+  border-radius: 14px;
+  background-color: #000;
+  color: #ded4c7;
+}
+
+.skill-card .badge {
+  background-color: #ded4c7 !important;
+  color: #000 !important;
+  border: 1px solid #ded4c7;
+}
+
+/* =========================
+   RESPONSIVE MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+  body {
+    padding-top: 90px;
+  }
+
+  .navbar-logo {
+    height: 45px;       /* 🔥 logo plus petit en mobile */
+    max-width: 180px;
+  }
+
+  #home.hero-signature {
+    padding: 40px 15px;
+    min-height: auto;
+  }
+
+  .signature-img {
+    max-height: 40vh;
+  }
+
+  .cv-btn {
+    width: 100%;
+    max-width: 260px;
+    font-size: 16px;
+    padding: 14px 20px;
+  }
+}
+/* =========================
+   NAVBAR MOBILE – MENU CENTRÉ
+========================= */
+
+@media (max-width: 991px) {
+
+  /* menu déroulant */
+  .navbar-collapse {
+    background-color: #ffffff;
+    padding: 30px 0;
+    text-align: center;          /* 🔥 centre le texte */
+  }
+
+  /* liste */
+  .navbar-nav {
+    width: 100%;
+    align-items: center !important; /* 🔥 centre horizontalement */
+    gap: 18px;
+  }
+
+  /* liens */
+  .navbar-nav .nav-link {
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 0;
+  }
+
+  /* bouton langue */
+  .navbar-nav .btn {
+    margin-top: 10px;
+  }
+}
