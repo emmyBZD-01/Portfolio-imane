@@ -23,18 +23,9 @@ body {
   padding: 10px 0;
 }
 
-.navbar-brand {
-  padding: 0;
-}
-
 .navbar-logo {
   height: 70px;
-  width: auto;
   max-width: 320px;
-}
-
-.navbar-toggler {
-  border: none;
 }
 
 /* =========================
@@ -50,12 +41,49 @@ body {
   background-color: #f8f9fa;
 }
 
-.signature-img {
+.hero-inner {
+  width: 100%;
+  max-width: 1600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* =========================
+   SIGNATURE SLIDER
+========================= */
+
+.signature-slider {
+  position: relative;
   width: 100%;
   max-width: 1400px;
-  max-height: 70vh;
+  height: 70vh;
+  margin-bottom: 40px;
+  overflow: hidden;
+}
+
+.signature-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
-  margin-bottom: 30px;
+
+  opacity: 0;
+  transform: translateX(80px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.signature-slide.active {
+  opacity: 1;
+  transform: translateX(0);
+  z-index: 2;
+}
+
+.signature-slide.inactive {
+  opacity: 0;
+  transform: translateX(-80px);
+  z-index: 1;
 }
 
 /* =========================
@@ -76,14 +104,18 @@ body {
   background-color: #212529;
   color: #ffffff;
   border: none;
+  cursor: pointer;
   transition: all 0.3s ease;
+  text-decoration: none;        /* 🔥 enlève le trait */
+  display: inline-block;
+  text-align: center;
 }
 
 .cv-btn:hover {
   background-color: #000;
   color: #ded4c7;
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  transform: translateY(-4px) scale(1.04);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
 }
 
 /* =========================
@@ -103,27 +135,61 @@ body {
 }
 
 /* =========================
-   RESPONSIVE MOBILE
+   NAVBAR MOBILE – TEXTE CENTRÉ
 ========================= */
 
-@media (max-width: 768px) {
+@media (max-width: 991px) {
 
   body {
     padding-top: 90px;
   }
 
   .navbar-logo {
-    height: 45px;       /* 🔥 logo plus petit en mobile */
+    height: 45px;
     max-width: 180px;
   }
+
+  .navbar-collapse {
+    background-color: #ffffff;
+    padding: 30px 0;
+    text-align: center;
+  }
+
+  .navbar-nav {
+    width: 100%;
+    align-items: center !important;
+  }
+
+  .navbar-nav .nav-item {
+    width: 100%;
+  }
+
+  .navbar-nav .nav-link {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 10px 0;
+  }
+
+  .navbar-nav .btn {
+    margin: 15px auto 0 auto;
+    display: block;
+  }
+}
+
+/* =========================
+   MOBILE HERO
+========================= */
+
+@media (max-width: 768px) {
 
   #home.hero-signature {
     padding: 40px 15px;
     min-height: auto;
   }
 
-  .signature-img {
-    max-height: 40vh;
+  .signature-slider {
+    height: 40vh;
   }
 
   .cv-btn {
@@ -131,37 +197,5 @@ body {
     max-width: 260px;
     font-size: 16px;
     padding: 14px 20px;
-  }
-}
-/* =========================
-   NAVBAR MOBILE – MENU CENTRÉ
-========================= */
-
-@media (max-width: 991px) {
-
-  /* menu déroulant */
-  .navbar-collapse {
-    background-color: #ffffff;
-    padding: 30px 0;
-    text-align: center;          /* 🔥 centre le texte */
-  }
-
-  /* liste */
-  .navbar-nav {
-    width: 100%;
-    align-items: center !important; /* 🔥 centre horizontalement */
-    gap: 18px;
-  }
-
-  /* liens */
-  .navbar-nav .nav-link {
-    font-size: 18px;
-    font-weight: 500;
-    padding: 8px 0;
-  }
-
-  /* bouton langue */
-  .navbar-nav .btn {
-    margin-top: 10px;
   }
 }
