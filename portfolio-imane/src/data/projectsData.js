@@ -1,6 +1,7 @@
 import gedImg from "../assets/projects/ged-pharma5.jpeg";
 import parcImg from "../assets/projects/parc-info.jpeg";
 import etoileImg from "../assets/projects/etoile-bricolage.jpeg";
+import etoileImg1 from "../assets/projects/eb.jpeg";
 
 const projectsData = [
   {
@@ -11,7 +12,7 @@ const projectsData = [
     technologies: ["React.js", "JavaScript", "Bootstrap"],
     github: "", // si le repo est privé, laisse vide
     demo: "https://www.etoilebricolage.com/",
-    image:etoileImg , // optionnel si tu n’as pas encore de capture
+   images: [etoileImg, etoileImg1] , // optionnel si tu n’as pas encore de capture
   },
 
   {
@@ -20,7 +21,7 @@ const projectsData = [
     description: "Plateforme web sécurisée de gestion documentaire qualité.",
     technologies: ["Django", "Python", "Bootstrap", "SQLite"],
     github: "https://github.com/imane/ged-pharma5",
-    demo: "", // pas déployé
+    demo: "https://emy001.pythonanywhere.com/", // pas déployé
     image: gedImg,
   },
   {

@@ -106,7 +106,7 @@ body {
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;
-  text-decoration: none;        /* 🔥 enlève le trait */
+  text-decoration: none; /* 🔥 enlève le trait */
   display: inline-block;
   text-align: center;
 }
@@ -139,7 +139,6 @@ body {
 ========================= */
 
 @media (max-width: 991px) {
-
   body {
     padding-top: 90px;
   }
@@ -182,7 +181,6 @@ body {
 ========================= */
 
 @media (max-width: 768px) {
-
   #home.hero-signature {
     padding: 40px 15px;
     min-height: auto;
@@ -197,5 +195,141 @@ body {
     max-width: 260px;
     font-size: 16px;
     padding: 14px 20px;
+  }
+}
+/* =========================
+   ABOUT – ANIMATION AU SCROLL
+========================= */
+
+.about-section {
+  opacity: 0;
+  transform: translate(-60px, -30px);
+  transition: all 0.9s ease-out;
+}
+
+.about-section.about-visible {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+/* =========================
+   ABOUT – TEXTE & CARD STYLE
+========================= */
+
+.about-text h2 {
+  font-size: 2.6rem;
+  letter-spacing: -0.5px;
+}
+
+.about-text p {
+  line-height: 1.8;
+}
+
+.about-card {
+  border-radius: 18px;
+  background-color: #ffffff;
+}
+
+.about-item {
+  padding: 12px 0;
+  font-size: 16px;
+  font-weight: 500;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.about-item:last-child {
+  border-bottom: none;
+}
+
+/* =========================
+   MOBILE ABOUT
+========================= */
+
+@media (max-width: 768px) {
+  .about-text h2 {
+    font-size: 2rem;
+  }
+
+  .about-text p {
+    font-size: 15px;
+  }
+}
+/* =========================
+   ABOUT – ICONES PRO
+========================= */
+/* =========================
+   ABOUT – ICONES LISIBLES & PRO
+========================= */
+
+.about-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 12px 0;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.about-item:last-child {
+  border-bottom: none;
+}
+
+/* conteneur de l’icône */
+.about-icon {
+  width: 42px;
+  height: 42px;
+  padding: 0px;
+
+  background-color: #ffffff;   /* 🔥 contraste */
+  border-radius: 100%;
+  object-fit: contain;
+
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+.about-item:hover .about-icon {
+  transform: scale(1.08);
+  transition: transform 0.3s ease;
+}
+/* =========================
+   SKILLS – ANIMATION SCROLL
+========================= */
+
+.skills-row {
+  opacity: 0;
+  transform: scale(0.85);
+  transition: all 0.6s ease-out;
+}
+
+/* état visible */
+.skills-row.skills-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* cartes (au centre au début) */
+.skill-col {
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+/* apparition une par une */
+.skills-visible .skill-col:nth-child(1) {
+  animation: skillIn 0.6s ease forwards 0.2s;
+}
+.skills-visible .skill-col:nth-child(2) {
+  animation: skillIn 0.6s ease forwards 0.4s;
+}
+.skills-visible .skill-col:nth-child(3) {
+  animation: skillIn 0.6s ease forwards 0.6s;
+}
+.skills-visible .skill-col:nth-child(4) {
+  animation: skillIn 0.6s ease forwards 0.8s;
+}
+
+@keyframes skillIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
